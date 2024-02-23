@@ -16,7 +16,7 @@ export const AddStudio = (props) => {
             studio: studio,
         })
         try {
-            fetch('http://localhost:8000/studio/',{
+            fetch(process.env.REACT_APP_API_URL_BASE + '/studio/',{
             method: 'POST',
             body: payload,
             headers:{

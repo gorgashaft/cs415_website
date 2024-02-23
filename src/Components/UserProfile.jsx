@@ -10,7 +10,7 @@ const UserProfile = () => {
 
     useEffect(() => {
         if (!window.sessionStorage.getItem("auth")) navigate('/unauthorized')
-        fetch('http://localhost:8000/users/user/' + user_id)
+        fetch(process.env.REACT_APP_API_URL_BASE + '/users/user/' + user_id)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -73,7 +73,7 @@ export default UserProfile
 
 //   useEffect(() => {
 //     if (!window.sessionStorage.getItem('auth')) navigate('/unauthorized');
-//     fetch('http://localhost:8000/users/user/' + user_id)
+//     fetch(process.env.REACT_APP_API_URL_BASE + '/users/user/' + user_id)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);
@@ -82,7 +82,7 @@ export default UserProfile
 //       })
 //       .catch((error) => console.error(error));
 
-//     fetch('http://localhost:8000/ratings/' + user_id)
+//     fetch(process.env.REACT_APP_API_URL_BASE + '/ratings/' + user_id)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);

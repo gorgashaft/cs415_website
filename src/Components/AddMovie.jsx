@@ -15,7 +15,7 @@ export const AddMovie = (props) => {
     console.log(studios);
     // Fetch Studios
     useEffect(() => {
-        fetch('http://localhost:8000/studio/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/studio/')
             .then(response => response.json())
             .then(data => setStudios(data.Studios))
             .catch(error => console.error("Failed to load studios", error));
@@ -23,7 +23,7 @@ export const AddMovie = (props) => {
 
     // Fetch Genres
     useEffect(() => {
-        fetch('http://localhost:8000/genre/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/genre/')
             .then(response => response.json())
             .then(data => setGenres(data.Genres))
             .catch(error => console.error("Failed to load genres", error));
@@ -43,7 +43,7 @@ export const AddMovie = (props) => {
             genreId
         });
 
-        fetch('http://localhost:8000/movies/', {
+        fetch(process.env.REACT_APP_API_URL_BASE + '/movies/', {
             method: 'POST',
             body: payload,
             headers: {

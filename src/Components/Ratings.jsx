@@ -9,7 +9,7 @@ const Ratings = () => {
 
     useEffect(() => {
         if (!window.sessionStorage.getItem("auth")) navigate('/unauthorized')
-        fetch('http://localhost:8000/ratings/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/ratings/')
         .then(res => res.json())
         .then(data => {
             const columns = Object.keys(data.Ratings[0]);

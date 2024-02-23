@@ -10,7 +10,7 @@ const MovieList = () => {
 
     useEffect(() => {
         if (!window.sessionStorage.getItem("auth")) navigate('/unauthorized')
-        fetch('http://localhost:8000/movies/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/movies/')
         .then(res => res.json())
         .then(data => {
             setColumns(Object.keys(data.Movies[0]))

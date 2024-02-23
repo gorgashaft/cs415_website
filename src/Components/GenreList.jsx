@@ -10,7 +10,7 @@ const GenreList = () => {
 
     useEffect(() => {
         if (!window.sessionStorage.getItem("auth")) navigate('/unauthorized')
-        fetch('http://localhost:8000/genre/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/genre/')
         .then(res => res.json())
         .then(data => {
             setColumns(Object.keys(data.Genres[0]))

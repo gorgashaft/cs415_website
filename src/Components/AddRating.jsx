@@ -16,7 +16,7 @@ export const AddRating = (props) => {
 
     // Fetch Movie Title
     useEffect(() => {
-        fetch('http://localhost:8000/movies/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/movies/')
             .then(response => response.json())
             .then(data => setMovies(data.Movies))
             .catch(error => console.error("Failed to load ", error));
@@ -24,7 +24,7 @@ export const AddRating = (props) => {
 
     // Fetch User (First Name)
     useEffect(() => {
-        fetch('http://localhost:8000/users/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/users/')
             .then(response => response.json())
             .then(data => setUser(data.Users))
             .catch(error => console.error("Failed to load first name", error));
@@ -43,7 +43,7 @@ export const AddRating = (props) => {
             userId
         });
 
-        fetch('http://localhost:8000/ratings/', {
+        fetch(process.env.REACT_APP_API_URL_BASE + '/ratings/', {
             method: 'POST',
             body: payload,
             headers: {
@@ -132,7 +132,7 @@ export default AddRating;
 //             comments: comments,
 //         })
 //         try {
-//             fetch('http://localhost:8000/ratings/',{
+//             fetch(process.env.REACT_APP_API_URL_BASE + '/ratings/',{
 //             method: 'POST',
 //             body: payload,
 //             headers:{

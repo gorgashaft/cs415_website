@@ -10,7 +10,7 @@ const Studios = () => {
 
     useEffect(() => {
         if (!window.sessionStorage.getItem("auth")) navigate('/unauthorized')
-        fetch('http://localhost:8000/studio/')
+        fetch(process.env.REACT_APP_API_URL_BASE + '/studio/')
         .then(res => res.json())
         .then(data => {
             setColumns(Object.keys(data.Studios[0]))

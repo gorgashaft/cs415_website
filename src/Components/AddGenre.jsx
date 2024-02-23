@@ -16,7 +16,7 @@ export const AddGenre = (props) => {
             genre: genre,
         })
         try {
-            fetch('http://localhost:8000/genre/',{
+            fetch(process.env.REACT_APP_API_URL_BASE + '/genre/',{
             method: 'POST',
             body: payload,
             headers:{
