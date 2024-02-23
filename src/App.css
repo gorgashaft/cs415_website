@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: top;
+  justify-content: center;
+  columns: white;
+  background-image: linear-gradient(79deg, #7066f6, #3d78ad 48%, #4df7a2);
+}
+
+.auth-form-container, .login-form, .register-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-horizontal {
+  flex-direction: row;
+}
+
+.table {
+  justify-content: flex-start;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.table thead tr {
+    text-align: center;
+}
+
+.table td {
+  text-align: center;
+  padding: 5px 20px;
+}
+
+.table thead th {
+  border-bottom: 2px solid;
+  padding: 5px 15px;
+}
+
+.hidetext { -webkit-text-security: disc; /* Default */ }
+
+.auth-form-container {
+  padding: 5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: .5rem;
+}
+
+label {
+  text-align: left;
+  padding: .25rem 0;
+}
+
+input {
+  margin: .5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+}
+
+button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #7066f6;
+}
+
+.link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+
+.text-success {
+  background: none;
+  color: white;
+}
+
+
